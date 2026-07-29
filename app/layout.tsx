@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/common/header";
+import Footer from "@/components/common/footer";
 
-const outfit = Outfit({subsets:['latin'],variable:'--font-sans'});
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "iBuiltThis - Share Your Creations, Discover New Launches",
@@ -19,7 +21,11 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.className} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
