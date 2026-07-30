@@ -5,15 +5,19 @@ import { Badge } from "../ui/badge";
 import VotingButtons from "./voting-buttons";
 //   import VotingButtons from "./voting-buttons";
 //   import { ProductType } from "@/types";
+import {InferSelectModel} from "drizzle-orm";
+import { products } from "@/db/schema";
 
-interface Product {
-    id: number;
-    name: string;
-    description: string;
-    tags: string [];
-    votes: number;
-    isFeatured: boolean;
-}
+// interface Product {
+//     id: number;
+//     name: string;
+//     description: string;
+//     tags: string [];
+//     votes: number;
+//     isFeatured: boolean;
+// }
+
+type Product = InferSelectModel<typeof products>;
 
 export default function ProductCard({ product }: { product: Product }) {
     const hasVoted = false;
@@ -27,7 +31,7 @@ export default function ProductCard({ product }: { product: Product }) {
                                 <CardTitle className="text-lg group-hover:text-primary transition-colors">
                                     {product.name}
                                 </CardTitle>
-                                {product.isFeatured && (
+                                {product.voteCount > 100 && (
                                     <Badge className="gap-1 bg-primary text-primary-foreground">
                                         <StarIcon className="size-3 fill-current" />
                                         Featured

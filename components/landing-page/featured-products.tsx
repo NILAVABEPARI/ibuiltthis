@@ -3,35 +3,38 @@ import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ProductCard from "../products/product-card";
+import { getFeaturedProducts } from "@/lib/products/product-select";
 
-const featuredProducts = [
-    {
-        id: 1,
-        name: "ParityKit",
-        description: "A toolkit for creating parity products",
-        tags: ["SaaS", "Pricing", "Global"],
-        votes: 615,
-        isFeatured: true,
-    },
-    {
-        id: 2,
-        name: "ParityKit",
-        description: "A toolkit for creating parity products",
-        tags: ["SaaS", "Pricing", "Global"],
-        votes: 615,
-        isFeatured: true,
-    },
-    {
-        id: 3,
-        name: "ParityKit",
-        description: "A toolkit for creating parity products",
-        tags: ["SaaS", "Pricing", "Global"],
-        votes: 615,
-        isFeatured: true,
-    },
-]
+// const featuredProducts = [
+//     {
+//         id: 1,
+//         name: "ParityKit",
+//         description: "A toolkit for creating parity products",
+//         tags: ["SaaS", "Pricing", "Global"],
+//         votes: 615,
+//         isFeatured: true,
+//     },
+//     {
+//         id: 2,
+//         name: "ParityKit",
+//         description: "A toolkit for creating parity products",
+//         tags: ["SaaS", "Pricing", "Global"],
+//         votes: 615,
+//         isFeatured: true,
+//     },
+//     {
+//         id: 3,
+//         name: "ParityKit",
+//         description: "A toolkit for creating parity products",
+//         tags: ["SaaS", "Pricing", "Global"],
+//         votes: 615,
+//         isFeatured: true,
+//     },
+// ]
 
-export default function FeaturedProducts() {
+export default async function FeaturedProducts() {
+    const featuredProducts = await getFeaturedProducts();
+
     return (
         <section className="py-20 bg-muted/20">
             <div className="wrapper">
