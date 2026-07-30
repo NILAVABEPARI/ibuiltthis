@@ -1,8 +1,10 @@
-import SectionHeader from "../common/section-header";
+"use cache";
+
+import SectionHeader from "@/components/common/section-header";
 import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import ProductCard from "../products/product-card";
+import ProductCard from "@/components/products/product-card";
 import { getFeaturedProducts } from "@/lib/products/product-select";
 
 // const featuredProducts = [
