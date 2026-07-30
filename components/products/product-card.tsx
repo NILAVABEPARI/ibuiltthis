@@ -1,7 +1,7 @@
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { StarIcon } from "lucide-react";
 import Link from "next/link";
-import { Badge } from "../ui/badge";
+import { Badge } from "@/components/ui/badge";
 import VotingButtons from "./voting-buttons";
 //   import VotingButtons from "./voting-buttons";
 //   import { ProductType } from "@/types";
