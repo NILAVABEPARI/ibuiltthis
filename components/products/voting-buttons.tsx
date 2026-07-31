@@ -1,5 +1,5 @@
 "use client";
-// import {  downvoteProductAction,  upvoteProductAction } from "@/lib/products/product-actions";
+import {  downvoteProductAction,  upvoteProductAction } from "@/lib/products/product-actions";
 import { cn } from "@/lib/utils";
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react";
 import { useOptimistic, useTransition } from "react";
@@ -24,14 +24,14 @@ export default function VotingButtons({
   const handleUpvote = async () => {
     startTransition(async () => {
       setOptimisticVoteCount(1);
-    //   await upvoteProductAction(productId);
+      await upvoteProductAction(productId);
     });
   };
 
   const handleDownvote = async () => {
     startTransition(async () => {
       setOptimisticVoteCount(-1);
-    //   await downvoteProductAction(productId);
+      await downvoteProductAction(productId);
     });
   };
 
