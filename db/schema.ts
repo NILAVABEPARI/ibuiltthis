@@ -1,14 +1,4 @@
-import {
-  pgTable,
-  serial,
-  text,
-  varchar,
-  integer,
-  timestamp,
-  json,
-  uniqueIndex,
-  index,
-} from "drizzle-orm/pg-core";
+import { pgTable, serial, text, varchar, integer, timestamp, json, uniqueIndex, index } from "drizzle-orm/pg-core";
 
 // ============= PRODUCTS =============
 export const products = pgTable(
@@ -37,10 +27,11 @@ export const products = pgTable(
     userId: varchar("user_id", { length: 255 }), // Clerk user ID
 
     // Organization reference (for backend queries only)
-    // organizationId: varchar("organization_id", { length: 255 }), // Clerk org ID
+    organizationId: varchar("organization_id", { length: 255 }), // Clerk org ID
   },
   (table) => [
     uniqueIndex("products_slug_idx").on(table.slug),
     index("products_status_idx").on(table.status),
+    index("products_organization_idx").on(table.organizationId),
   ]
 );

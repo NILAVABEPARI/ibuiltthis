@@ -3,7 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
-import {ClerkProvider} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -19,11 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html
-        lang="en"
-        className={`${outfit.className} antialiased`}
-      >
-        <body className="min-h-full flex flex-col">
+      <html lang="en">
+        {/* <body className="min-h-full flex flex-col"> */}
+        <body className={`${outfit.className} antialiased`}>
           <Header />
           {children}
           <Footer />

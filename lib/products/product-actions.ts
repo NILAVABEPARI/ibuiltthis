@@ -24,13 +24,13 @@ export const addProductAction = async (
       };
     }
 
-    // if (!orgId) {
-    //   return {
-    //     success: false,
-    //     message: "You must be a member of an organization to submit a product",
-    //     errors: undefined,
-    //   };
-    // }
+    if (!orgId) {
+      return {
+        success: false,
+        message: "You must be a member of an organization to submit a product",
+        errors: undefined,
+      };
+    }
 
     const user = await currentUser();
     const userEmail = user?.primaryEmailAddress?.emailAddress || "anonymous";
@@ -63,7 +63,7 @@ export const addProductAction = async (
       tags: tagsArray,
       status: "pending",
       submittedBy: userEmail,
-      // organizationId: orgId,
+      organizationId: orgId,
       userId,
     });
 
@@ -103,13 +103,13 @@ export const upvoteProductAction = async (productId: number) => {
       };
     }
 
-    // if (!orgId) {
-    //   console.log("User not a member of an organization");
-    //   return {
-    //     success: false,
-    //     message: "You must be a member of an organization to submit a product",
-    //   };
-    // }
+    if (!orgId) {
+      console.log("User not a member of an organization");
+      return {
+        success: false,
+        message: "You must be a member of an organization to submit a product",
+      };
+    }
 
     await db
       .update(products)
@@ -146,13 +146,13 @@ export const downvoteProductAction = async (productId: number) => {
       };
     }
 
-    // if (!orgId) {
-    //   console.log("User not a member of an organization");
-    //   return {
-    //     success: false,
-    //     message: "You must be a member of an organization to submit a product",
-    //   };
-    // }
+    if (!orgId) {
+      console.log("User not a member of an organization");
+      return {
+        success: false,
+        message: "You must be a member of an organization to submit a product",
+      };
+    }
 
     await db
       .update(products)
