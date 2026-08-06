@@ -114,7 +114,7 @@ export default async function Product({
               </div>
               {websiteUrl && (
                 <Button
-                  asChild
+                  // asChild
                   className="w-full rounded-lg"
                   variant={"outline"}
                 >

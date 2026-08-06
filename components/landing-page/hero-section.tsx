@@ -48,13 +48,13 @@ export default function HeroSection() {
                         A community platform for creators to showcase their apps, AI tools, SaaS products, and creative projects. Authentic launches, real builders, genuine feedback.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                        <Button asChild size="lg" className="text-base px-8 shadow-lg">
+                        <Button /*asChild*/ size="lg" className="text-base px-8 shadow-lg">
                             <Link href="/submit">
                                 <SparklesIcon className="size-5" />
                                 Share your Project
                             </Link>
                         </Button>
-                        <Button asChild size="lg" variant="secondary" className="text-base px-8 shadow-lg">
+                        <Button /*asChild*/ size="lg" variant="secondary" className="text-base px-8 shadow-lg">
                             <Link href="/explore">
                                 Explore Projects <ArrowRightIcon className="size-5" />
                             </Link>

@@ -1,7 +1,6 @@
 import HeroSection from "@/components/landing-page/hero-section";
 import FeaturedProducts from "@/components/landing-page/featured-products";
 import RecentlyLaunchedProducts from "@/components/landing-page/recently-launched-products";
-// import ProductSkeleton from "@/components/products/product-skeleton";
 import { Suspense } from "react";
 import ProductSkeleton from "@/components/products/product-skeleton";
 
